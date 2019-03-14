@@ -5,10 +5,3 @@ python:
 
 install:
   - pip install -r requirements.txt
-
-notification:
-  email:
-    recipient:
-      - parsayousefi@aol.com
-    on_success: always
-    on_failure: always
