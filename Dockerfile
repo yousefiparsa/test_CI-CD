@@ -1,5 +1,9 @@
 FROM python:3.6
 
-RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
+WORKDIR /test
 
-CMD [ "gunicorn", "-w", "4", "-b" , "0.0.0.0:80", "app:app" ]
+COPY . /test
+
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+CMD [ "./run_server.sh" ]
