@@ -1,6 +1,0 @@
-version: '3.6'
-
-service:
-  image: test
-  ports:
-    - 5005:80
