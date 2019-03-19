@@ -7,4 +7,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - app2.py
+  - python app2.py
