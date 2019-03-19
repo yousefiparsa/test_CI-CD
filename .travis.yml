@@ -14,3 +14,4 @@ deploy:
     script: run_server.sh
     on:
       branch: develop
+      condition: $RUN_DEPLOYMENT = "TRUE"
