@@ -11,5 +11,9 @@ services:
 install:
   - pip install -r requirements.txt
 
-script:
+before_script:
+  - python tester.py
   - make docker-image
+
+script:
+  - docker run test
