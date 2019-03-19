@@ -8,6 +8,6 @@ install:
 
 deploy:
   - provider: script
-    script: python app.py
+    script: run_server.sh
     on:
       branch: develop
