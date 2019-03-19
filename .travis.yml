@@ -16,4 +16,4 @@ before_script:
   - make docker-image
 
 script:
-  - docker run --rm test
+  - docker run --rm -d test
