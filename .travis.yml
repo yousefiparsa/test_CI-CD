@@ -11,12 +11,9 @@ services:
 install:
   - pip install -r requirements.txt
 
-before_script:
+before_deploy:
   - python tester.py
   - make docker-image
-
-script:
-  - echo "Test is successful"
 
 deploy:
   - provider: script
