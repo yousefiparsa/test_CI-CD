@@ -20,12 +20,12 @@ script:
 
 deploy:
   - provider: script
-    script: run_server.sh staging
+    script: bash run_server.sh staging
     on:
       branch: develop
   
   - provider: script
-    script: run_server.sh production
+    script: bash run_server.sh production
     on:
       branch: master
 
