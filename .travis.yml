@@ -29,3 +29,8 @@ deploy:
     script: bash run_server.sh production
     on:
       branch: master
+
+branches:
+  only:
+    - develop
+    - master
