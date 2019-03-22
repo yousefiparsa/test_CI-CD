@@ -4,8 +4,8 @@
 
 echo "Selected environment: $1"
 
-if [ "$1" == "staging"]; then
-    echo "Deployment on Staging is successful!"
-else
+if [ "$1" == "production"]; then
     echo "Deployment on Production is successful!"
+else
+    echo "Deployment on Staging is successful!"
 fi
