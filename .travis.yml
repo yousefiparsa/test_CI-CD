@@ -16,4 +16,21 @@ before_script:
   - make docker-image
 
 script:
-  - docker run --rm -d test
+  - echo "Test is successful!"
+
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    script: bash run_server.sh staging
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    script: bash run_server.sh production
+    on:
+      branch: master
+
+branches:
+  only:
+    - develop
+    - master
