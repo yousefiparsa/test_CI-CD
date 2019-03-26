@@ -6,6 +6,12 @@ echo "Selected environment: $1"
 
 if [ "$1" == "production" ] ; then
     echo "Deployment on Production is successful!"
+    pwd
+    cd ~/build/yousefiparsa/test/
+    ls
 else
     echo "Deployment on Staging is successful!"
+    pwd
+    cd ~/build/yousefiparsa/test/
+    ls
 fi
