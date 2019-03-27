@@ -38,4 +38,7 @@ branches:
     - master
 
 notification:
-  slack: clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB
+  slack:
+    rooms:
+      - clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB#general
+      - clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB#docs-test
