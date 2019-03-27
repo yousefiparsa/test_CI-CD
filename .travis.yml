@@ -36,3 +36,6 @@ branches:
   only:
     - develop
     - master
+
+notification:
+  slack: clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB
