@@ -6,6 +6,12 @@ echo "Selected environment: $1"
 
 if [ "$1" == "production" ] ; then
     echo "Deployment on Production is successful!"
+    export LOG=`git log -1 --graph --stat --pretty`
+    python log/slack_notification.py production
+
 else
     echo "Deployment on Staging is successful!"
+    export LOG=`git log -1 --graph --stat --pretty`
+    python log/slack_notification.py staging
+
 fi

@@ -1,5 +1,7 @@
 sudo: required
 
+dist: xenial
+
 language: python
 
 python:
@@ -12,7 +14,7 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - python tester.py
+  - python deployment/tester.py
   - make docker-image
 
 script:
@@ -21,12 +23,12 @@ script:
 deploy:
   # deploy develop to the staging environment
   - provider: script
-    script: bash run_server.sh staging
+    script: bash deployment/run_server.sh staging
     on:
       branch: develop
   # deploy master to production
   - provider: script
-    script: bash run_server.sh production
+    script: bash deployment/run_server.sh production
     on:
       branch: master
 
@@ -34,3 +36,9 @@ branches:
   only:
     - develop
     - master
+
+notification:
+  slack:
+    rooms:
+      - clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB#general
+      - clear-lab:rLhKmPOBMcaWIMvkXSbnqKEB#docs-test
