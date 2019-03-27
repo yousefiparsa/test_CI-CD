@@ -6,12 +6,12 @@ echo "Selected environment: $1"
 
 if [ "$1" == "production" ] ; then
     echo "Deployment on Production is successful!"
-    export LOG=`git log -p -1 --graph --stat --pretty`
-    curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World from Staging!", "channel":"docs-test","username":"slack-notification-bot","icon_emoji":":slack:"}' $SLACK_URL
+    export LOG=`git log -1 --graph --stat --pretty`
+    python log/slack_notification.py production
 
 else
     echo "Deployment on Staging is successful!"
-    export LOG=`git log -p -1 --graph --stat --pretty`
-    curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World from Production!", "channel":"docs-test","username":"slack-notification-bot","icon_emoji":":slack:"}' $SLACK_URL
+    export LOG=`git log -1 --graph --stat --pretty`
+    python log/slack_notification.py staging
 
 fi
