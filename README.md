@@ -1,3 +1,3 @@
 # test
 
-This is a test private repository to integrate with Travis CI.
+This is a test repository to integrate CD/CD with Travis CI.
